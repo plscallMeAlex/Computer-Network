@@ -1,7 +1,7 @@
 # The Data Link Layer (2nd Layer)
-Need a lot of security in this layer. "Node to node delivery" working on the MAC address. This layer the data that send from this layer called frame (framing). On layer 3 called packages. To make node to node smooth we do error control because error can happened every time. Flow control to get the maximum speed that have the same receiver and sender.
+Need a lot of security in this layer. "Node to node delivery" working on the MAC address. This layer the data that send from this layer called frame (framing). On layer 3 called packet. To make node to node smooth we do error control because error can happened every time. Flow control to get the maximum speed that have the same receiver and sender.
 ## Function of the data
-Package is 3 layer.
+Packet is on 3 layer.
 Header Payload, ... is frame on 2 layer.
 
 ## Services Provided to Network Layer
@@ -23,6 +23,7 @@ error on 7 the frame will be 7 collector.
 
 We have flag is the special collector at the end of the frame.
 Flag -> Header -> Payload field(Package in 3 layer) -> Trailer -> Flag
+![[Pasted image 20250118001922.png]]
 
 ### We use bit stuffing:
 This method is safer after that will remove.

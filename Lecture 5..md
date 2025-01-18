@@ -25,6 +25,13 @@ Separate into multiple station any device called station. One single channel sha
 **Carrier Sense** - Send to check someone using that channel need to wait to prevent the data loss (normally communication).
 **No Carrier Sense** - Don't care just send it (use in some protocol ALOHA).
 
+|**Type**|**Channel Access**|**Collision Risk**|**Example Protocols**|
+|---|---|---|---|
+|**Continuous Time**|Anytime, no synchronization|High|Pure ALOHA|
+|**Slotted Time**|Synchronized slots|Moderate|Slotted ALOHA|
+|**Carrier Sense**|Sense before transmitting|Low|CSMA, CSMA/CD|
+|**Non-Carrier Sense**|No sensing, transmits immediately|High|Pure ALOHA, Slotted ALOHA|
+
 #### Pure ALOHA
 In pure ALOHA, is satellite protocol communication use no carrier sense because it far from the satellite so it no need to wait the channel.
 ![[Pasted image 20250108140430.png]]

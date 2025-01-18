@@ -27,7 +27,7 @@ Wireless cost the power consumption but range is far than the Bluetooth.
 
 Connection-Oriented and connectionless Service.
 - Connection-oriented service - We need connection setup first. Establishes a connection like setup circuit to from one line to another line (or path to the end) we use this path to send data once release connection will drop.
-- Connectionless service - Fast but unreliable communicate without the connection like a sending a post and let the post-office do the rest but need the specific address it may loss and we don't know it sent to where.
+	- Connectionless service - Fast but unreliable communicate without the connection like a sending a post and let the post-office do the rest but need the specific address it may loss and we don't know it sent to where.
 Internet layer is full duplex.
 Using IP on top with TCP or (UDP is connectionless).
 If want the speed we need to sacrifice some bit use UDP to send data.
@@ -41,7 +41,7 @@ In the network use the same OSI models.
 	Depends on the each focus on one main responsibility.
 - **Physical Layer** - The lowest layer (cable). Main is bit transmission or line configuration. Talk about transmission mode have to select what gonna use and Signal like if use LAN use copper or something, wireless what frequency (Voltage, Light, Frequency). Encoding use 10 to represent 1 use 01 to represent 0 why don't use binary encoding Manchester encoding because if sending 1111 through the line and change to 0 u will charge a lot of voltage and u want to discharge it will electric shock and long time to discharge might damage the devices. Interface. Media CAT is a LAN line media.
 - **Data Link Layer** - Main is node to node deliver send data from device to another device like device to switch. **Addressing** physical address and MAC address. Physical Address the last 24 bit will represent the device. **Access control** is how we gonna access the media and control the media and send the data through the media need to setup the rules. **Flow control** if the sender send the bit speed of more than the receiver can receive it will try to make the sender and receiver to have the same speed it will have protocol to tell too fast package loss. **Error control** how we detected or control the error. **Synchronization** technique to send $\delta$T to measure timing of the signal receive. The data will Be SOF and next will be Address, S-MAC, Data, ErrorControlSequence. Use SOF to calculate $\delta$T for the rest of data. In this line called frame. 
-- **Network Layer** - Main is source to destination delivery is from the computer to another device it might contain a lot of connection a lot of a node. **Logical Addressing** IP address appear here we have to have source address and destination address. Doing subnetting. **Routing** is finding the path from source to destination (shortest path). Address Transformation match the logical and physical using ARP protocol. **Multiplexing** if we have open multiple application it called package.
+- **Network Layer** - Main is source to destination delivery is from the computer to another device it might contain a lot of connection a lot of a node. **Logical Addressing** IP address appear here we have to have source address and destination address. Doing subnetting. **Routing** is finding the path from source to destination (shortest path). Address Transformation match the logical and physical using ARP protocol. **Multiplexing** if we have open multiple application it called packet.
 
 	Develop Software starting from this layers.
 - **Transportation Layer** - Main is End-to-End message Delivery Control like open a browser have a lot of destination of IP address client can open a IP address to different IP address. Service-point (PORT) addressing map endpoint to another endpoint (map the process inside). Establish, maintain, terminate virtual circuit (design whether use TCP, UDP we define here)
@@ -75,7 +75,8 @@ is the measure of the amount of information.
 - Internet devices(connect more get least)
 - Type of data being transferred
 - Network topology.
-- Numbers of users.
+- Power conditions
+- Numbers of users on the network.
 
 ## Transmission Media (Talk in physical layer)
 - Copper Media (Copper line)
@@ -85,7 +86,12 @@ is the measure of the amount of information.
 ### Copper Media
 	3 lines baseline(broadband) lanline 
 - **Coaxial cable** use for TV and CCTV stop using this in data communication it a plastic black-white cover. Inside will be outer conductor and insulating material. Core is copper core. Bad thing because having 2 conductors speed and Through put 10Mb/s
-- **Twisted-Pair Cable** using nowadays there are two type STP and UTP. Shielded and Unshielded. STP it will have thin metal film inside and separate twisted pair to protected electromagnetic interference and radio frequency interference. UTP is the same but no metal film. Color is solid orange and stripe orange, solid green and stripe green, solid blue and stripe blue, Black and grey. Throughput is 10 - 100 - 1000 - 2500 - 5000 and 10000 Mbps Max length is 100m otherwise will loss the amplitude of the signal. We need to twisted because of crosstalk if parallel i will generate the electromagnetic field and both of them will cause noise that we don't need. So if twisted the noise will canceled by themself not 100% but cancel.
+![[Pasted image 20250117224131.png]]
+- **Twisted-Pair Cable** using nowadays there are two type STP and UTP. Shielded and Unshielded. STP it will have thin metal film inside and separate twisted pair to protected electromagnetic interference and radio frequency interference. UTP is the same but no metal film. Color is solid orange and stripe orange, solid green and stripe green, solid blue and stripe blue, Black and grey. Throughput is 10 - 100 - 1000 - 2500 - 5000 and 10000 Mbps **Max length is 100m** otherwise will loss the amplitude of the signal. We need to twisted because of crosstalk if parallel i will generate the electromagnetic field and both of them will cause noise that we don't need. So if twisted the noise will canceled by themself not 100% but cancel.
+(STP)
+![[Pasted image 20250117224357.png]]
+(UTP)
+![[Pasted image 20250117224337.png]]
 - **Ethernet Cable Standard** TIA/EIA-568-AB method of for wiring and RJ45 Connector.
 	nowadays having a switch to change between the straight and cross
 	- Straight-through Cable Both have to have a same type end1 have A end2 must have A
@@ -104,6 +110,7 @@ Using the critical angle. Having 2 density of glass to force critical angle of t
 #### Multimode and Single-mode.
 Single-mode: small core super fast inside is very thin go longer than copper line because it light source no interfere source but its very easy to break it.
 Multimode: thick core slower but can carry the light.
+![[Pasted image 20250117235408.png]]
 #### Connector standard 
 LC, SC, FC. Green APC Blue UPC.
 UPG - Ultra Physical Contact cutting cable straight get more loss than APC.
